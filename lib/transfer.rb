@@ -17,7 +17,7 @@ class Transfer
      # @receiver.each {|m| m + amount}
      # @sender - amount
     #elsif !valid? 
-      ##"Transaction rejected. Please check your account balance."
+      Transaction rejected. Please check your account balance."
     #end 
    if self.status == "pending" && valid? && sender.balance >= amount
     @sender.balance -= amount
