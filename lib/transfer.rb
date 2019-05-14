@@ -19,9 +19,11 @@ class Transfer
     #elsif !valid? 
       ##"Transaction rejected. Please check your account balance."
     #end 
+   if self.status == "pending"
     @sender.balance -= amount
     @receiver.balance += amount
     self.status = "complete"
+   end
   end
   
   def reverse_transfer
