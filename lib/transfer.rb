@@ -19,7 +19,7 @@ class Transfer
     #elsif !valid? 
       ##"Transaction rejected. Please check your account balance."
     #end 
-   if self.status == "pending"
+   if self.status == "pending" && valid?
     @sender.balance -= amount
     @receiver.balance += amount
     self.status = "complete"
