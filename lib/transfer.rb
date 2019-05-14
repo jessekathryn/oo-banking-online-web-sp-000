@@ -14,8 +14,8 @@ class Transfer
   
   def execute_transaction
     if valid? && @balance
-      @receiver.each {|m| m + amount}
-      @sender - amount
+      @receiver.each {|m| m += amount}
+      @sender += amount
     elsif !valid? 
       @receiver.status = "rejected"
       "Transaction rejected. Please check your account balance."
