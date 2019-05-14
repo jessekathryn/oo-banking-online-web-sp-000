@@ -17,7 +17,7 @@ class Transfer
       @receiver.each {|m| m + amount}
       @sender - amount
     else
-      "Rejected"
+      "Transaction rejected. Please check your account balance."
     end 
   end
 end
