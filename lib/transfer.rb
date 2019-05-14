@@ -13,13 +13,13 @@ class Transfer
   end
   
   def execute_transaction
-    if !valid? 
-      @receiver.status = "rejected"
-      "Transaction rejected. Please check your account balance."
-    elsif valid? && @balance
+    if valid? && @balance
       @receiver.each {|m| m + amount}
       @sender - amount
-    end
+    elsif !valid? 
+      @receiver.status = "rejected"
+      "Transaction rejected. Please check your account balance."
+    end 
   end
   
   def reverse_transfer
